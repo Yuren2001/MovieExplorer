@@ -1,0 +1,8 @@
+.app {
+  display: flex;
+  grid-template-rows: 80px auto;
+
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 60px;
+}
