@@ -5,17 +5,13 @@ import svgr from "vite-plugin-svgr";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  base: "./", // ✅ Set base to './' for relative paths (important for Vercel)
   build: {
-    // Ensure the build directory is 'dist' (default)
-    outDir: "dist", // Vercel expects the build output in the 'dist' directory
-    // Minify the code for production
-    minify: "terser",
+    outDir: "dist", // Default is 'dist' – Vercel expects this
+    minify: "terser", // Minify output using terser
   },
   server: {
-    // This can be useful for local development when testing deployment setups
-    port: 3000, // You can change the port as needed
-    open: true, // Open the browser when the server starts
+    port: 3000, // Optional: useful for local dev
+    open: true,
   },
-  // If you're using any base URL, define it here
-  base: "/MovieExplorer", // Make sure it's '/' or your custom base path
 });
